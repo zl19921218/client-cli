@@ -1,3 +1,3 @@
 #! /usr/bin/env node
 
-console.log('client-cli');
+console.log(' hello client-cli');
