@@ -13,10 +13,14 @@
     "lerna": "^5.4.3"
   },
   "workspaces": [
-    "packages/*"
+    "core/*",
+    "models/*",
+    "utils/*",
+    "commends/*"
   ],
   "repository": {
     "type": "git",
     "url": "git@github.com:zl19921218/client-cli.git"
-  }
+  },
+  "dependencies": {}
 }
