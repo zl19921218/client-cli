@@ -25,9 +25,20 @@
   },
   "gitHead": "25bbf0808ba00133a71742a22fdc7cf85ed69b58",
   "dependencies": {
-    "@shitou-client-cli/utils": "file:../../utils/utils",
+    "@babel/core": "^7.19.1",
     "@shitou-client-cli/log": "file:../../utils/log",
+    "@shitou-client-cli/utils": "file:../../utils/utils",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.2",
     "import-local": "^3.1.0",
-    "npmlog": "^6.0.2"
+    "minimist": "^1.2.6",
+    "npmlog": "^6.0.2",
+    "path-exists": "^4.0.0",
+    "root-check": "^2.0.0",
+    "semver": "^7.3.7",
+    "user-home": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6"
   }
 }
