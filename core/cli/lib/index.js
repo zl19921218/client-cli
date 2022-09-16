@@ -2,7 +2,7 @@
  * @Author: 小石头
  * @Date: 2022-08-31 14:57:15
  * @LastEditors: 小石头
- * @LastEditTime: 2022-09-16 15:44:42
+ * @LastEditTime: 2022-09-16 15:53:46
  * @Description:
  */
 "use strict";
@@ -49,6 +49,9 @@ function cli() {
  * @description: 检测脚手架更新
  */
 function checkGlobalUpdate() {
+    // 获取本地版本 & 报名 
+    const currentVersion = pkg.version;
+    const currentName = pkg.name;
 
 }
 
