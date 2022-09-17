@@ -1,6 +1,6 @@
 {
   "name": "@shitou-client-cli/core",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "client-cli/core",
   "author": "zhanglei04 <zhanglei04@baijia.com>",
   "homepage": "",
@@ -26,9 +26,9 @@
   "gitHead": "25bbf0808ba00133a71742a22fdc7cf85ed69b58",
   "dependencies": {
     "@babel/core": "^7.19.1",
+    "@shitou-client-cli/get-npm-info": "file:../../utils/get-npm-info",
     "@shitou-client-cli/log": "file:../../utils/log",
     "@shitou-client-cli/utils": "file:../../utils/utils",
-    "@shitou-client-cli/get-npm-info": "file:../../utils/get-npm-info",
     "colors": "^1.4.0",
     "dotenv": "^16.0.2",
     "import-local": "^3.1.0",
