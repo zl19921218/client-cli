@@ -23,12 +23,12 @@
   "scripts": {
     "test": "node ./__tests__/core.test.js"
   },
-  "gitHead": "25bbf0808ba00133a71742a22fdc7cf85ed69b58",
+  "gitHead": "781b3b569e875ac4436ea0c5ac60d2ee264d21c1",
   "dependencies": {
     "@babel/core": "^7.19.1",
-    "@shitou-client-cli/get-npm-info": "file:../../utils/get-npm-info",
-    "@shitou-client-cli/log": "file:../../utils/log",
-    "@shitou-client-cli/utils": "file:../../utils/utils",
+    "@shitou-client-cli/get-npm-info": "^1.2.0",
+    "@shitou-client-cli/log": "^1.1.0",
+    "@shitou-client-cli/utils": "^1.1.0",
     "colors": "^1.4.0",
     "dotenv": "^16.0.2",
     "import-local": "^3.1.0",

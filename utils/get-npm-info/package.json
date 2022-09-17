@@ -27,5 +27,10 @@
     "axios": "^0.27.2",
     "semver": "^7.3.7",
     "url-join": "^4.0.1"
+  },
+  "gitHead": "781b3b569e875ac4436ea0c5ac60d2ee264d21c1",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
