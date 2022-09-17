@@ -28,6 +28,7 @@
     "@babel/core": "^7.19.1",
     "@shitou-client-cli/log": "file:../../utils/log",
     "@shitou-client-cli/utils": "file:../../utils/utils",
+    "@shitou-client-cli/get-npm-info": "file:../../utils/get-npm-info",
     "colors": "^1.4.0",
     "dotenv": "^16.0.2",
     "import-local": "^3.1.0",

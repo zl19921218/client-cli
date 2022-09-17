@@ -2,7 +2,7 @@
  * @Author: 小石头
  * @Date: 2022-08-31 14:57:15
  * @LastEditors: 小石头
- * @LastEditTime: 2022-09-16 15:53:46
+ * @LastEditTime: 2022-09-17 14:34:58
  * @Description:
  */
 "use strict";
@@ -17,7 +17,6 @@ const colors = require("colors/safe");
 const userHome = require("user-home");
 const pathExists = require("path-exists");
 const dotEnv = require("dotenv");
-
 const args = require("minimist")(process.argv.slice(2));
 
 const pkg = require("../package.json");
@@ -29,7 +28,7 @@ const constants = require("./constants");
 // json -> JSON.parse
 // 其他文件 -> 使用js引擎解析
 
-function cli() {
+async function cli() {
     try {
         checkPkgVersion();
         checkNodeVersion();
@@ -38,9 +37,9 @@ function cli() {
         checkInputArgs();
         checkDebug();
         checkEnv();
-        checkGlobalUpdate();
+        await checkGlobalUpdate();
     } catch (e) {
-        utilLog.error(e.message);
+        utilLog.error(e);
     }
 }
 
@@ -48,11 +47,18 @@ function cli() {
  * @Author: 小石头
  * @description: 检测脚手架更新
  */
-function checkGlobalUpdate() {
-    // 获取本地版本 & 报名 
+async function checkGlobalUpdate() {
     const currentVersion = pkg.version;
     const currentName = pkg.name;
 
+    const { getNpmSemverVersion } = require("@shitou-client-cli/get-npm-info");
+
+    const latestVersion = await getNpmSemverVersion(currentName, null, currentVersion);
+
+    if (latestVersion && semver.gt(latestVersion, currentVersion)) {
+        utilLog.warn(colors.yellow('更新提示', `请手动更新${currentName}, 当前版本${currentVersion}, 最新版本${latestVersion}
+        更新命令 npm install -g ${currentName}`));
+    }
 }
 
 /**
@@ -139,7 +145,6 @@ function checkPkgVersion() {
 function checkNodeVersion() {
     const currentVersion = process.version;
     const lowestNodeVersion = constants.LOWEST_NODE_VERSION;
-
     if (!semver.gt(currentVersion, lowestNodeVersion)) {
         throw new Error(
             `小石头牌脚手架需要安装 v${lowestNodeVersion} 以上的Node版本`
